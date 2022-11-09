@@ -11,3 +11,43 @@ Then I am presented with a quote, as well as an image and information on the tit
 
 **When I return to the web application,
 Then I am presented with my last search result.
+
+
+# HTML
+Header - Add the name of the page(<h1>) and short description(<h3>) to top of page. 
+Text Color: White
+Image container to contain main header image.
+
+Information Box (left side) - Hold the information that includes an title, image, and other descriptive information on the users searched title.
+
+Quote Box (right side) - Contains a random quote from the title that the user searched for.
+
+Search Bar (center) - Add a search bar to the page so the user can search for anime titles and receive their search requests.
+
+Generate Button - Add a button for the user to click on to submit their search query.
+
+
+# CSS 
+-Page Color Palette:
+red: #911f1f - border of the main image box
+yellow: #cd9232 - button color, background color for quote and info boxes
+background: #6c6a59 - background to page color
+white: #eef3f2 - text color and border color for quote and info boxes.
+
+-Border Radius: to all image and text containers
+
+-Text Color: white/#2c292e
+
+-Media Queries: make the website responsive across multiple screen sizes and devices.
+
+
+# JavaScript
+-Connect the anime quote API with an AJAX query
+
+-Connect the anime information/image API with an AJAX query
+
+-Make a click listener event for the "generate button" to generate user search query
+
+-Dynamically add the users search results to the page by using static HTML elements.
+
+-Set up local storage to save the users last search result.
