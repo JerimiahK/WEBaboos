@@ -8,8 +8,7 @@ When I search for a title that is not in the database,
 Then I am presented with a message that displays "Sorry, this title is not in our database."
 When I search for an anime title,
 Then I am presented with a quote, as well as an image and information on the title I searched for.
-
-**When I return to the web application,
+When I return to the web application,
 Then I am presented with my last search result.
 
 
