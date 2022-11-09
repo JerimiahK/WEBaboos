@@ -1,0 +1,81 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "BLOMBERG", sans-serif;
+}
+
+body {
+  background-color: #676551;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  color: #eef3f2;
+  padding-top: 25px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-generator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 35%;
+  padding-right: 35%;
+}
+
+.text-container {
+  display: flex;
+  justify-content: center;
+}
+
+#img-box {
+  width: 225px;
+  padding: 50px;
+  margin: 20px;
+  border: 5px solid #911f1f;
+  background-color: #cd9232;
+  border-radius: 20px;
+}
+
+#container-1 {
+  width: 225px;
+  padding: 50px;
+  margin: 20px;
+  border: 5px solid #eef3f2;
+  background-color: #cd9232;
+  border-radius: 20px;
+}
+
+#container-2 {
+  width: 225px;
+  padding: 50px;
+  margin: 20px;
+  border: 5px solid #eef3f2;
+  background-color: #cd9232;
+  border-radius: 20px;
+}
+
+#btn {
+  margin-right: 30%;
+  margin-left: 30%;
+  border-radius: 20px;
+  color: #2c292e;
+  background-color: #cd9232;
+}
+
+#search-bar {
+  border-radius: 20px;
+}
