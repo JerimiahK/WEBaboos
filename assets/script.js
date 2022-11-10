@@ -8,6 +8,8 @@ let character = "";
 let quote = "";
 let image = "";
 let userInput = "";
+let titleID = "";
+let shortPlot = "";
 const h3El = document.getElementById("instructions");
 
 button.on("click", function () {
@@ -20,19 +22,32 @@ button.on("click", function () {
     characterName.text("-" + character);
     quoteText.text(quote);
     console.log(res);
-    // let quoteSave = $("#quote").val(quote);
     localStorage.setItem("Character", character);
     localStorage.setItem("Quote", quote);
     localStorage.setItem("Title", userInput);
   });
   $.ajax({
-    url: "https://imdb-api.com/en/API/SearchSeries/k_0dkt756l/" + userInput,
-  }).then(function (res) {
-    image = res.results[0].image;
-    $("#image").attr("src", image);
-    localStorage.setItem("Image", image);
-    console.log(res);
-  });
+    url: "https://imdb-api.com/en/API/SearchSeries/k_9w0jcsih/" + userInput,
+  })
+    .then(function (res) {
+      image = res.results[0].image;
+      $("#image").attr("src", image);
+      localStorage.setItem("Image", image);
+      titleID = res.results[0].id;
+    })
+    .then(function () {
+      $.ajax({
+        url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
+      }).then(function (res) {
+        shortPlot = res.plotShort.plainText;
+        infoWiki = res.url;
+        $("#fact").text(shortPlot);
+        $("#infoWiki").attr("href", infoWiki);
+        $("#infoWiki").text(infoWiki);
+        localStorage.setItem("Info", shortPlot);
+        localStorage.setItem("Wiki", infoWiki);
+      });
+    });
   h3El.classList.add("hide");
 });
 
@@ -64,6 +79,15 @@ if (localStorage.getItem("Image") !== null) {
   $("#image").attr("src", localStorage.getItem("Image"));
 }
 
+// if (localStorage.getItem("Info") !== null) {
+//   $("#info-container").text(localStorage.getItem("Info"));
+// }
+
+// if (localStorage.getItem("Wiki") !== null) {
+//   $("#info-container").attr("href", localStorage.getItem("Wiki"));
+// }
+
 $(".search-generator #search-bar").val(localStorage.getItem("Title"));
 $("#quote").text(localStorage.getItem("Quote"));
 $("#character-name").text(localStorage.getItem("Character"));
+$("#fact").text(localStorage.getItem("Fact-1"));
