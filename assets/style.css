@@ -95,12 +95,19 @@ p {
 
 #info-container {
   width: 400px;
+  height: 200px;
+  overflow: auto;
+  font-size: 1rem;
   padding: 20px;
   margin: 20px;
   color: #2c292e;
   border: 5px solid #eef3f2;
   background-color: #cd9232;
   border-radius: 20px;
+}
+
+#info-container p {
+  font-size: 1rem;
 }
 
 #btn {
