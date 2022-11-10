@@ -57,6 +57,6 @@ searchBar.on("keypress", function (event) {
 });
 
 $(".search-generator #search-bar").val(localStorage.getItem("Title"));
-$("#quote").val(localStorage.getItem("Quote"));
-$("#character-name").val(localStorage.getItem("Character"));
-$("#img-box").val(localStorage.getItem("Image"));
+$("#quote").text(localStorage.getItem("Quote"));
+$("#character-name").text(localStorage.getItem("Character"));
+$("#image").attr("src", localStorage.getItem("Image"));
