@@ -63,6 +63,7 @@ searchBar.on("keypress", function (event) {
 if (localStorage.getItem("Image") !== null) {
   $("#image").attr("src", localStorage.getItem("Image"));
 }
+
 $(".search-generator #search-bar").val(localStorage.getItem("Title"));
 $("#quote").text(localStorage.getItem("Quote"));
 $("#character-name").text(localStorage.getItem("Character"));
