@@ -10,7 +10,6 @@ let image = "";
 let userInput = "";
 const h3El = document.getElementById("instructions");
 
-
 button.on("click", function () {
   userInput = $("#search-bar").val();
   $.ajax({
@@ -60,7 +59,10 @@ searchBar.on("keypress", function (event) {
   }
 });
 
+// keeps placeholder image upon page load when their is no local storage in place.
+if (localStorage.getItem("Image") !== null) {
+  $("#image").attr("src", localStorage.getItem("Image"));
+}
 $(".search-generator #search-bar").val(localStorage.getItem("Title"));
 $("#quote").text(localStorage.getItem("Quote"));
 $("#character-name").text(localStorage.getItem("Character"));
-$("#image").attr("src", localStorage.getItem("Image"));
