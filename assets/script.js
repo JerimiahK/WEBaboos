@@ -8,6 +8,8 @@ let character = "";
 let quote = "";
 let image = "";
 let userInput = "";
+const h3El = document.getElementById("instructions");
+
 
 button.on("click", function () {
   userInput = $("#search-bar").val();
@@ -32,6 +34,7 @@ button.on("click", function () {
     localStorage.setItem("Image", image);
     console.log(res);
   });
+  h3El.classList.add("hide");
 });
 
 searchBar.on("keypress", function (event) {
@@ -53,6 +56,7 @@ searchBar.on("keypress", function (event) {
       $("#image").attr("src", image);
       console.log(res);
     });
+    h3El.classList.add("hide");
   }
 });
 
