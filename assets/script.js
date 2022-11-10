@@ -4,6 +4,7 @@ const info = $("#info-container");
 const characterName = $("#character-name");
 const quoteText = $("#quote");
 const searchBar = $("#search-bar");
+const h3El = document.getElementById("instructions");
 
 button.on("click", function () {
   let userInput = $("#search-bar").val();
@@ -23,6 +24,7 @@ button.on("click", function () {
     $("#image").attr("src", image);
     console.log(res);
   });
+  h3El.classList.add("hide");
 });
 
 searchBar.on("keypress", function (event) {
@@ -44,5 +46,6 @@ searchBar.on("keypress", function (event) {
       $("#image").attr("src", image);
       console.log(res);
     });
+    h3El.classList.add("hide");
   }
 });
