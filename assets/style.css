@@ -12,14 +12,17 @@ header {
   display: flex;
   flex-direction: column;
   color: #eef3f2;
-  padding-top: 25px;
 }
 
 h1 {
+  font-size: 75px;
   text-align: center;
+  background-color: #cd9232;
+  border-bottom: solid #eef3f2;
 }
 
 p {
+  font-size: 20px;
   text-align: center;
 }
 
@@ -48,15 +51,15 @@ p {
   object-fit: cover;
   /* padding: 50px;
   margin: 20px; */
-  border: 5px solid #911f1f;
+  border: 10px solid #911f1f;
   background-color: #911f1f;
   border-radius: 20px;
 }
 
 #image {
-width: 350px;
-height: 450px;
-border-radius: 15px;
+  width: 350px;
+  height: 450px;
+  border-radius: 15px;
 }
 
 #quote-container {
@@ -95,4 +98,14 @@ border-radius: 15px;
 
 #search-bar {
   border-radius: 20px;
+}
+
+#btn:hover {
+  background-color: #b48d4f;
+}
+
+#btn:active {
+  background-color: #cd9232;
+  box-shadow: 0 5px rgb(68, 68, 68);
+  transform: translateY(4px);
 }
