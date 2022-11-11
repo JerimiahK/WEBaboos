@@ -39,6 +39,7 @@ button.on("click", function () {
       $.ajax({
         url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
       }).then(function (res) {
+        console.log(res);
         shortPlot = res.plotShort.plainText;
         infoWiki = res.url;
         $("#fact").text(shortPlot);
