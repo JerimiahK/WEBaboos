@@ -27,17 +27,29 @@ button.on("click", function () {
     localStorage.setItem("Title", userInput);
   });
   $.ajax({
-    url: "https://imdb-api.com/en/API/SearchSeries/k_0dkt756l/" + userInput,
+    url: "https://imdb-api.com/en/API/SearchSeries/k_bdu7lhul/" + userInput,
   })
     .then(function (res) {
-      image = res.results[0].image;
-      $("#image").attr("src", image);
+      console.log(res);
+      let time = 0;
+      let interval = setInterval(function() {
+        if (time < res.results.length) {
+            image = res.results[time].image;
+            console.log(image);
+            $("#image").attr("src", image);
+        } 
+        else {
+          clearInterval(interval);
+        }
+      time++;
+      }, 2000)
+      image= res.results[0].image;
       localStorage.setItem("Image", image);
       titleID = res.results[0].id;
     })
     .then(function () {
       $.ajax({
-        url: "https://imdb-api.com/en/API/Wikipedia/k_0dkt756l/" + titleID,
+        url: "https://imdb-api.com/en/API/Wikipedia/k_bdu7lhul/" + titleID,
       }).then(function (res) {
         console.log(res);
         shortPlot = res.plotShort.plainText;
@@ -70,17 +82,29 @@ searchBar.on("keypress", function (event) {
       localStorage.setItem("Title", userInput);
     });
     $.ajax({
-      url: "https://imdb-api.com/en/API/SearchSeries/k_9w0jcsih/" + userInput,
+      url: "https://imdb-api.com/en/API/SearchSeries/k_bdu7lhul/" + userInput,
     })
       .then(function (res) {
-        image = res.results[0].image;
-        $("#image").attr("src", image);
+        console.log(res);
+        let time = 0;
+        console.log(res.results.length);
+        let interval = setInterval(function() {
+          if (time < res.results.length) {
+            image = res.results[time].image;
+            console.log(image);
+            $("#image").attr("src", image);
+          } else {
+            clearInterval(interval);
+          }
+          time++;
+        }, 2000)
+        image= res.results[0].image;
         localStorage.setItem("Image", image);
         titleID = res.results[0].id;
       })
       .then(function () {
         $.ajax({
-          url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
+          url: "https://imdb-api.com/en/API/Wikipedia/k_bdu7lhul/" + titleID,
         }).then(function (res) {
           console.log(res);
           shortPlot = res.plotShort.plainText;
