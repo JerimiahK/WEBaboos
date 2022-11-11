@@ -39,6 +39,7 @@ button.on("click", function () {
       $.ajax({
         url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
       }).then(function (res) {
+        console.log(res);
         shortPlot = res.plotShort.plainText;
         infoWiki = res.url;
         $("#fact").text(shortPlot);
@@ -53,23 +54,42 @@ button.on("click", function () {
 
 searchBar.on("keypress", function (event) {
   if (event.key === "Enter") {
-    let userInput = $("#search-bar").val();
+    userInput = $("#search-bar").val();
     $.ajax({
       url: "https://animechan.vercel.app/api/random/anime?title=" + userInput,
     }).then(function (res) {
-      const character = res.character;
-      const quote = res.quote;
+      character = res.character;
+      quote = res.quote;
       characterName.text("-" + character);
       quoteText.text(quote);
       console.log(res);
+      localStorage.setItem("Character", character);
+      localStorage.setItem("Quote", quote);
+      localStorage.setItem("Title", userInput);
     });
     $.ajax({
-      url: "https://imdb-api.com/en/API/SearchSeries/k_0dkt756l/" + userInput,
-    }).then(function (res) {
-      const image = res.results[0].image;
-      $("#image").attr("src", image);
-      console.log(res);
-    });
+      url: "https://imdb-api.com/en/API/SearchSeries/k_9w0jcsih/" + userInput,
+    })
+      .then(function (res) {
+        image = res.results[0].image;
+        $("#image").attr("src", image);
+        localStorage.setItem("Image", image);
+        titleID = res.results[0].id;
+      })
+      .then(function () {
+        $.ajax({
+          url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
+        }).then(function (res) {
+          console.log(res);
+          shortPlot = res.plotShort.plainText;
+          infoWiki = res.url;
+          $("#fact").text(shortPlot);
+          $("#infoWiki").attr("href", infoWiki);
+          $("#infoWiki").text(infoWiki);
+          localStorage.setItem("Info", shortPlot);
+          localStorage.setItem("Wiki", infoWiki);
+        });
+      });
     h3El.classList.add("hide");
   }
 });
