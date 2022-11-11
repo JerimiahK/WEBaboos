@@ -80,15 +80,16 @@ if (localStorage.getItem("Image") !== null) {
   $("#image").attr("src", localStorage.getItem("Image"));
 }
 
-// if (localStorage.getItem("Info") !== null) {
-//   $("#info-container").text(localStorage.getItem("Info"));
-// }
+if (localStorage.getItem("Wiki") !== null) {
+  $("#infoWiki").attr("href", localStorage.getItem("Wiki"));
+  $("#infoWiki").text(localStorage.getItem("Wiki"));
+}
 
-// if (localStorage.getItem("Wiki") !== null) {
-//   $("#info-container").attr("href", localStorage.getItem("Wiki"));
-// }
+if (localStorage.getItem("Info") !== null) {
+  $("#fact").text(localStorage.getItem("Info"));
+  console.log(localStorage.getItem("Info"));
+}
 
 $(".search-generator #search-bar").val(localStorage.getItem("Title"));
 $("#quote").text(localStorage.getItem("Quote"));
 $("#character-name").text(localStorage.getItem("Character"));
-$("#fact").text(localStorage.getItem("Fact-1"));
