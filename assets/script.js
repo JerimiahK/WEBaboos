@@ -27,7 +27,7 @@ button.on("click", function () {
     localStorage.setItem("Title", userInput);
   });
   $.ajax({
-    url: "https://imdb-api.com/en/API/SearchSeries/k_9w0jcsih/" + userInput,
+    url: "https://imdb-api.com/en/API/SearchSeries/k_0dkt756l/" + userInput,
   })
     .then(function (res) {
       image = res.results[0].image;
@@ -37,7 +37,7 @@ button.on("click", function () {
     })
     .then(function () {
       $.ajax({
-        url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
+        url: "https://imdb-api.com/en/API/Wikipedia/k_0dkt756l/" + titleID,
       }).then(function (res) {
         shortPlot = res.plotShort.plainText;
         infoWiki = res.url;
@@ -49,6 +49,8 @@ button.on("click", function () {
       });
     });
   h3El.classList.add("hide");
+  info.removeClass("hide");
+  quoteContainer.removeClass("hide");
 });
 
 searchBar.on("keypress", function (event) {
@@ -71,10 +73,22 @@ searchBar.on("keypress", function (event) {
       console.log(res);
     });
     h3El.classList.add("hide");
+    info.removeClass("hide");
+    quoteContainer.removeClass("hide");
   }
 });
 
 // keeps placeholder image upon page load when their is no local storage in place.
+if (
+  localStorage.getItem("Character") === null &&
+  localStorage.getItem("Quote") === null &&
+  localStorage.getItem("Info") === null &&
+  localStorage.getItem("Wiki") === null
+) {
+  info.addClass("hide");
+  quoteContainer.addClass("hide");
+}
+
 if (localStorage.getItem("Image") !== null) {
   $("#image").attr("src", localStorage.getItem("Image"));
 }
