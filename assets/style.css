@@ -21,6 +21,7 @@ h1 {
   text-align: center;
   background-color: #1d2a3b;
   border-bottom: solid #1d2a3b;
+  color: #b2a6d1;
 }
 
 h3 {
@@ -66,12 +67,16 @@ p {
   justify-content: center;
 }
 
+#header-text {
+  color: #868892;
+}
+
 #img-box {
   max-width: fit-content;
   max-height: fit-content;
   object-fit: cover;
-  border: 10px solid #bcbfcc;
-  background-color: #bcbfcc;
+  border: 10px solid #868892;
+  background-color: #868892;
   border-radius: 20px;
 }
 
@@ -88,8 +93,8 @@ p {
   padding: 20px;
   margin: 20px;
   color: #1a0e0e;
-  border: 5px solid #bcbfcc;
-  background-color: #6a647a;
+  border: 5px solid #868892;
+  background-color: #b2a6d1;
   border-radius: 20px;
 }
 
@@ -105,8 +110,8 @@ p {
   padding: 20px;
   margin: 20px;
   color: #1a0e0e;
-  border: 5px solid #bcbfcc;
-  background-color: #6a647a;
+  border: 5px solid #868892;
+  background-color: #b2a6d1;
   border-radius: 20px;
 }
 
@@ -119,7 +124,7 @@ p {
   height: 40px;
   border-radius: 20px;
   color: #1a0e0e;
-  background-color: #bf7d6f;
+  background-color: #b2a6d1;
   margin-bottom: 20px;
   box-shadow: #2c292e 5px 8px 4px;
 }
@@ -130,6 +135,10 @@ p {
 
 #btn:hover {
   background-color: #bf7d6f;
+}
+
+#instructions {
+  color: #b2a6d1;
 }
 
 #btn:active {
