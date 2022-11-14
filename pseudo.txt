@@ -1,7 +1,7 @@
-# User Story
+## User Story
 As an anime fan, I want to be able to use an application to search for anime quotes and correspoding images and information. 
 
-# Acceptance Criteria
+## Acceptance Criteria
 When I open the web application,
 Then I am presented with a clean, and polished user interface.
 When I search for a title that is not in the database,
