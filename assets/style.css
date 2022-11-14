@@ -13,7 +13,7 @@ header {
   flex-direction: column;
   color: #bcbfcc;
   background-color: #1d2a3b;
-  }
+}
 
 h1 {
   padding-top: 10px;
@@ -86,6 +86,10 @@ p {
   border-radius: 15px;
 }
 
+#quote-container::-webkit-scrollbar {
+  display: none;
+}
+
 #quote-container {
   width: 400px;
   height: 200px;
@@ -100,6 +104,10 @@ p {
 
 #character-name {
   font-size: 1rem;
+}
+
+#info-container::-webkit-scrollbar {
+  display: none;
 }
 
 #info-container {
