@@ -31,19 +31,8 @@ button.on("click", function () {
   })
     .then(function (res) {
       console.log(res);
-      let time = 0;
-      let interval = setInterval(function() {
-        if (time < res.results.length) {
-            image = res.results[time].image;
-            console.log(image);
-            $("#image").attr("src", image);
-        } 
-        else {
-          clearInterval(interval);
-        }
-      time++;
-      }, 2000)
       image= res.results[0].image;
+      $("#image").attr("src", image);
       localStorage.setItem("Image", image);
       titleID = res.results[0].id;
     })
@@ -86,19 +75,8 @@ searchBar.on("keypress", function (event) {
     })
       .then(function (res) {
         console.log(res);
-        let time = 0;
-        console.log(res.results.length);
-        let interval = setInterval(function() {
-          if (time < res.results.length) {
-            image = res.results[time].image;
-            console.log(image);
-            $("#image").attr("src", image);
-          } else {
-            clearInterval(interval);
-          }
-          time++;
-        }, 2000)
-        image= res.results[0].image;
+        image = res.results[0].image;
+        $("#image").attr("src", image);
         localStorage.setItem("Image", image);
         titleID = res.results[0].id;
       })
