@@ -27,18 +27,18 @@ button.on("click", function () {
     localStorage.setItem("Title", userInput);
   });
   $.ajax({
-    url: "https://imdb-api.com/en/API/SearchSeries/k_bdu7lhul/" + userInput,
+    url: "https://imdb-api.com/en/API/SearchSeries/k_9w0jcsih/" + userInput,
   })
     .then(function (res) {
       console.log(res);
-      image= res.results[0].image;
+      image = res.results[0].image;
       $("#image").attr("src", image);
       localStorage.setItem("Image", image);
       titleID = res.results[0].id;
     })
     .then(function () {
       $.ajax({
-        url: "https://imdb-api.com/en/API/Wikipedia/k_bdu7lhul/" + titleID,
+        url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
       }).then(function (res) {
         console.log(res);
         shortPlot = res.plotShort.plainText;
@@ -71,7 +71,7 @@ searchBar.on("keypress", function (event) {
       localStorage.setItem("Title", userInput);
     });
     $.ajax({
-      url: "https://imdb-api.com/en/API/SearchSeries/k_bdu7lhul/" + userInput,
+      url: "https://imdb-api.com/en/API/SearchSeries/k_9w0jcsih/" + userInput,
     })
       .then(function (res) {
         console.log(res);
@@ -82,7 +82,7 @@ searchBar.on("keypress", function (event) {
       })
       .then(function () {
         $.ajax({
-          url: "https://imdb-api.com/en/API/Wikipedia/k_bdu7lhul/" + titleID,
+          url: "https://imdb-api.com/en/API/Wikipedia/k_9w0jcsih/" + titleID,
         }).then(function (res) {
           console.log(res);
           shortPlot = res.plotShort.plainText;
